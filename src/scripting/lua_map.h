@@ -769,6 +769,7 @@ public:
 	int get_descname(lua_State*);
 	int get_default_resource(lua_State*);
 	int get_default_resource_amount(lua_State*);
+	int get_dither_layer(lua_State*);
 	int get_fertility(lua_State*);
 	int get_humidity(lua_State*);
 	int get_representative_image(lua_State*);

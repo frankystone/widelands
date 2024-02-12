@@ -4246,6 +4246,7 @@ const PropertyType<LuaTerrainDescription> LuaTerrainDescription::Properties[] = 
    PROP_RO(LuaTerrainDescription, descname),
    PROP_RO(LuaTerrainDescription, default_resource),
    PROP_RO(LuaTerrainDescription, default_resource_amount),
+   PROP_RO(LuaTerrainDescription, dither_layer),
    PROP_RO(LuaTerrainDescription, fertility),
    PROP_RO(LuaTerrainDescription, humidity),
    PROP_RO(LuaTerrainDescription, representative_image),
@@ -4323,6 +4324,19 @@ int LuaTerrainDescription::get_default_resource_amount(  // NOLINT - can not be 
    lua_State* L) {
 	lua_pushinteger(L, get()->get_default_resource_amount());
 	return 1;
+}
+
+/* RST
+   .. attribute:: dither_layer
+
+      (RO) The dither layer of this terrain.
+
+      See also: :ref:`Terrains <lua_world_terrains>`
+*/
+
+int LuaTerrainDescription::get_dither_layer(lua_State* L) {  // NOLINT - can not be made const
+    lua_pushuint32(L, get()->dither_layer());
+    return 1;
 }
 
 /* RST
