@@ -4331,6 +4331,11 @@ int LuaTerrainDescription::get_default_resource_amount(  // NOLINT - can not be 
 
       (RO) The dither layer of this terrain.
 
+      Note: The value for this attribute differs from the one defined by a terrain.
+      Internally the dither_layer of a terrain get multiplied with 100 and if a
+      terrain of an add-on has the same dither_layer value as another terrain it's
+      value will become dither_layer * 100 + x. So this attribute might get e.g. 34001.
+
       See also: :ref:`Terrains <lua_world_terrains>`
 */
 
